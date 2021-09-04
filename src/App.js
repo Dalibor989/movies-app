@@ -3,6 +3,7 @@ import './styles/App.css';
 import AppMovies from './pages/AppMovies';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 import Register from './pages/Register';
+import AddMovie from './pages/AddMovie';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Router>
         <nav>
           <h3><Link to="/movies">Movies</Link></h3>
+          <h3><Link to="/add">Add Movies</Link></h3>
           <h3><Link to="/register">Register</Link></h3>
         </nav>
         <Switch>
@@ -18,6 +20,9 @@ function App() {
           </Route>
           <Route exact path="/register">
             <Register />
+          </Route>
+          <Route exact path="/add">
+            <AddMovie />
           </Route>
         </Switch>
       </Router>
