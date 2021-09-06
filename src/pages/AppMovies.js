@@ -16,9 +16,9 @@ function AppMovies() {
 
   return (
     <div>
-      <ul>
+      <ul className="list-group">
         {movies.map((movie) => (
-          <li>{movie.title}</li>
+          <li key={movie.id}>{movie.title}</li>
         ))}
       </ul>
     </div>

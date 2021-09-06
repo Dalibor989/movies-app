@@ -19,12 +19,18 @@ function Register() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input required placeholder="Name..." type="text" value={credentials.name} onChange={({ target }) => setCredentials({...credentials, name: target.value})}/>
-        <input required placeholder="Email..." type="email" value={credentials.email} onChange={({ target }) => setCredentials({...credentials, email: target.value})}/>
-        <input required placeholder="Password" type="password" value={credentials.password} onChange={({ target }) => setCredentials({...credentials, password: target.value})}/>
-        <input required placeholder="Confirm password" type="password" value={credentials.password_confirmation} onChange={({ target }) => setCredentials({...credentials, password_confirmation: target.value})}/>
-        <button>Register</button>
+      <form onSubmit={handleSubmit} className="container">
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input required className="form-control" id="name" placeholder="Name..." type="text" value={credentials.name} onChange={({ target }) => setCredentials({...credentials, name: target.value})}/>
+          <label htmlFor="email">Email</label>
+          <input required className="form-control" id="email" placeholder="Email..." type="email" value={credentials.email} onChange={({ target }) => setCredentials({...credentials, email: target.value})}/>
+          <label htmlFor="password">Password</label>
+          <input required className="form-control" id="password" placeholder="Password" type="password" value={credentials.password} onChange={({ target }) => setCredentials({...credentials, password: target.value})}/>
+          <label htmlFor="password_confirmation">Confirm password</label>
+          <input required className="form-control" id="password_confirmation" placeholder="Confirm password" type="password" value={credentials.password_confirmation} onChange={({ target }) => setCredentials({...credentials, password_confirmation: target.value})}/>
+        <button className="btn btn-primary">Register</button>
+        </div>
       </form>
     </div>
   )
