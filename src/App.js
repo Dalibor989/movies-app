@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles/App.css';
-import AppMovies from './pages/AppMovies';
+import AppMovies from './containers/AppMovies';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Register from './pages/Register';
-import AddMovie from './pages/AddMovie';
-import Login from './pages/Login';
+import Register from './containers/Register';
+import AddMovie from './containers/AddMovie';
+import Login from './containers/Login';
 import NavBar from './components/NavBar';
 
 function App() {

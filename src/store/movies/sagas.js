@@ -5,7 +5,7 @@ import movieService from "../../services/MovieService";
 function* handleGetMovies() {
     try {
         const movies = yield call(movieService.getAll);
-        console.log(movies);
+
         yield put(setMovies(movies));   
     } catch (error) {
         console.log(error);
