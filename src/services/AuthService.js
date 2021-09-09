@@ -8,7 +8,7 @@ class AuthService extends HttpService
       const { token, user } = data;
 
       localStorage.setItem('token', token);
-      return user;
+      return { token, user };
     } catch (error) {
       console.log(error);
     }

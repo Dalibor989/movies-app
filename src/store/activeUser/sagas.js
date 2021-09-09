@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from "@redux-saga/core/effects";
-import { logout, login, getActiveUser, setActiveUser, setToken } from "./slice";
+import { register, logout, login, getActiveUser, setActiveUser, setToken } from "./slice";
 import authService from "../../services/AuthService";
 
 function* loginHandler(action) {
@@ -30,6 +30,17 @@ function* getActiveUserHandler() {
   }
 }
 
+function* registerHandler(action) {
+  try {
+    const { token, user } = yield call(authService.register, action.payload);
+    console.log('Register user', user);
+    yield put(setActiveUser(user));
+    yield put(setToken(token));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export function* watchLoging() {
   yield takeLatest(login.type, loginHandler);
 }
@@ -40,4 +51,8 @@ export function* watchLogout() {
 
 export function* watchGetActiveUser() {
   yield takeLatest(getActiveUser.type, getActiveUserHandler);
+}
+
+export function* watchRegister() {
+  yield takeLatest(register.type, registerHandler);
 }

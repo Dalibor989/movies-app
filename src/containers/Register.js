@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import authService from "../services/AuthService";
+import { useDispatch, useSelector } from "react-redux";
+import { register } from "../store/activeUser/slice";
 
 function Register() {
   const [credentials, setCredentials] = useState({
@@ -9,11 +10,12 @@ function Register() {
     'password_confirmation': '',
   });
 
+  const dispatch = useDispatch();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const user = await authService.register(credentials);
-
+    console.log('register', e)
+    dispatch(register());
   }
 
   return (

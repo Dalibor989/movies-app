@@ -4,6 +4,7 @@ const middlewareActions = {
   login() {},
   logout() {},
   getActiveUser() {},
+  register() {},
 }
 
 const activeUserSlice = createSlice({
@@ -24,6 +25,6 @@ const activeUserSlice = createSlice({
   },
 });
 
-export const { login, logout, setToken, setActiveUser, getActiveUser } = activeUserSlice.actions;
+export const { register, login, logout, setToken, setActiveUser, getActiveUser } = activeUserSlice.actions;
 
 export default activeUserSlice.reducer;
