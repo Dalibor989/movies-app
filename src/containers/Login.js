@@ -1,22 +1,23 @@
 import { useState } from "react";
-import { useHistory } from "react-router";
-import authService from "../services/AuthService";
+import { useDispatch, useSelector } from "react-redux";
+import { selectActiveUser, login } from "../store/activeUser";
 
 function Login() {
-  const history = useHistory();
-
   const [credentials, setCredentials] = useState({
     'email': '',
     'password': '',
   });
 
+  const activeUser = useSelector(selectActiveUser);
+  const dispatch = useDispatch();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const user = await authService.login(credentials);
-    console.log(user);
-
-    history.push('/movies');
+    dispatch(login({
+      email: "pero@gmail.com",
+      password: "asdfasdf"
+    }));
   }
 
   const handleEmailChange = (e) => {

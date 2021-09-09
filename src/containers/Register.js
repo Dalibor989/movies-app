@@ -14,7 +14,6 @@ function Register() {
 
     const user = await authService.register(credentials);
 
-    console.log(user);
   }
 
   return (
@@ -29,7 +28,7 @@ function Register() {
           <input required className="form-control" id="password" placeholder="Password" type="password" value={credentials.password} onChange={({ target }) => setCredentials({...credentials, password: target.value})}/>
           <label htmlFor="password_confirmation">Confirm password</label>
           <input required className="form-control" id="password_confirmation" placeholder="Confirm password" type="password" value={credentials.password_confirmation} onChange={({ target }) => setCredentials({...credentials, password_confirmation: target.value})}/>
-        <button className="btn btn-primary">Register</button>
+          <button className="btn btn-primary">Register</button>
         </div>
       </form>
     </div>

@@ -8,7 +8,7 @@ class MovieService extends HttpService {
       endpoint += `?title=${title}`;
     }
 
-    const { data } = await this.client.get(endpoint);
+    const { data } = await this.apiCall.get(endpoint);
     
     return data;
   }

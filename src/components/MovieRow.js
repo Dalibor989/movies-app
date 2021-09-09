@@ -2,7 +2,7 @@ function MovieRow({ movie }) {
   return (
     <div className="container">
       <div className="col-md">
-        <img src={movie.image_url} width="30%"/>
+        <img src={movie.image_url} width="30%" alt=""/>
       </div>
       <div className="col-md"><p>{movie.title}</p></div>
       <div className="col-md"><p>{movie.director}</p></div>
