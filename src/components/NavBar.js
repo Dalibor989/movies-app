@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import MoviesSearch from './MoviesSearch';
 
 function NavBar() {
   return (
@@ -7,6 +8,7 @@ function NavBar() {
       <h5 className="nav-link"><Link to="/add">Add Movies</Link></h5>
       <h5 className="nav-link"><Link to="/register">Register</Link></h5>
       <h5 className="nav-link"><Link to="/login">Login</Link></h5>
+      <MoviesSearch />
     </nav>
   )
 }
