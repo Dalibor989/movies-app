@@ -5,17 +5,13 @@ import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 import Register from './pages/Register';
 import AddMovie from './pages/AddMovie';
 import Login from './pages/Login';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{display: 'flex', justifyContent: 'space-evenly'}}>
-          <h5 className="nav-link"><Link to="/movies">Movies</Link></h5>
-          <h5 className="nav-link"><Link to="/add">Add Movies</Link></h5>
-          <h5 className="nav-link"><Link to="/register">Register</Link></h5>
-          <h5 className="nav-link"><Link to="/login">Login</Link></h5>
-        </nav>
+        <NavBar />
         <Switch>
           <Route exact path="/movies">
             <AppMovies />

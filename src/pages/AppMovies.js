@@ -1,23 +1,19 @@
-import React, {useState, useEffect} from 'react';
-import movieService from '../services/MovieService';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMovies, selectMovies, setMovies } from '../store/movies';
 
 function AppMovies() {
-  const [movies, setMovies] = useState([]);
+  const movies = useSelector(selectMovies);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      const data = await movieService.getAll();
-
-      setMovies(data);
-    };
-
-    fetchMovies();
+    dispatch(getMovies());
   }, []);
 
   return (
     <div>
       <ul className="list-group">
-        {movies.map((movie) => (
+        {movies.data.map((movie) => (
           <li key={movie.id}>{movie.title}</li>
         ))}
       </ul>
