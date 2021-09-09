@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/App.css';
 import AppMovies from './pages/AppMovies';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Register from './pages/Register';
 import AddMovie from './pages/AddMovie';
 import Login from './pages/Login';

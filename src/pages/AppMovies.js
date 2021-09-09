@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMovies, selectMovies, setMovies } from '../store/movies';
+import { getMovies, selectMovies } from '../store/movies';
 
 function AppMovies() {
   const movies = useSelector(selectMovies);

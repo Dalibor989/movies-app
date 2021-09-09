@@ -4,7 +4,7 @@ class MovieService extends HttpService {
   
    getAll = async () => {
     const { data } = await this.apiCall.get('movies');
-
+    
     return data;
   }
 
