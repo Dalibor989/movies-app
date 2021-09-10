@@ -15,7 +15,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('register', e)
-    dispatch(register());
+    dispatch(register(credentials));
   }
 
   return (

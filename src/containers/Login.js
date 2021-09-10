@@ -14,10 +14,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    dispatch(login({
-      email: "pero@gmail.com",
-      password: "asdfasdf"
-    }));
+    dispatch(login(credentials));
   }
 
   const handleEmailChange = (e) => {

@@ -28,9 +28,9 @@ function App() {
           <Route exact path="/movies">
             <AppMovies />
           </Route>
-          <Route exact path="/register">
+          <GuestRoute exact path="/register">
             <Register />
-          </Route>
+          </GuestRoute>
           <PrivateRoute exact path="/add">
             <AddMovie />
           </PrivateRoute>
