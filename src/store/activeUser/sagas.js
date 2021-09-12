@@ -5,7 +5,7 @@ import authService from "../../services/AuthService";
 function* loginHandler(action) {
   try {
     const { token, user } = yield call(authService.login, action.payload);
-    console.log('Token saga', token);
+    
     yield put(setActiveUser(user));
     yield put(setToken(token));
   } catch (error) {
@@ -33,7 +33,7 @@ function* getActiveUserHandler() {
 function* registerHandler(action) {
   try {
     const { token, user } = yield call(authService.register, action.payload);
-    console.log('Register user', user);
+    
     yield put(setActiveUser(user));
     yield put(setToken(token));
   } catch (error) {

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useHistory } from "react-router";
-import movieService from "../services/MovieService";
+import { useDispatch } from "react-redux";
+import { addMovie } from "../store/movies/slice";
+
 
 function AddMovie() {
-  const history = useHistory();
+  const dispatch = useDispatch();
 
   const [newMovie, setNewMovie] = useState({
     'title': '',
@@ -17,7 +18,7 @@ function AddMovie() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await movieService.addMovie(newMovie);
+    dispatch(addMovie(newMovie));
 
     setNewMovie({
       'title': '',
@@ -27,8 +28,6 @@ function AddMovie() {
       'release_date': '',
       'genre': '',
     });
-
-    history.push('/movies');
   }
 
   const handleTitleChange = (e) => {

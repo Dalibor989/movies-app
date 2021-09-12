@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { register } from "../store/activeUser/slice";
 
 function Register() {
@@ -14,7 +14,7 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('register', e)
+    
     dispatch(register(credentials));
   }
 

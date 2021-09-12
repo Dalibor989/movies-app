@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectActiveUser, login } from "../store/activeUser";
+import { login } from "../store/activeUser";
 
 function Login() {
   const [credentials, setCredentials] = useState({
@@ -8,7 +8,6 @@ function Login() {
     'password': '',
   });
 
-  const activeUser = useSelector(selectActiveUser);
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
