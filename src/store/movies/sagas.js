@@ -15,8 +15,6 @@ function* handleGetMovies(action) {
 function* addMovieHandler(action) {
     try {
         const movie = yield call(movieService.addMovie, action.payload);
-
-        yield put(setMovies(movie));
     } catch (error) {
         console.log('Add Movie', error);
     }
