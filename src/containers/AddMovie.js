@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 import { addMovie } from "../store/movies/slice";
 
 
 function AddMovie() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [newMovie, setNewMovie] = useState({
     'title': '',
@@ -28,6 +30,8 @@ function AddMovie() {
       'release_date': '',
       'genre': '',
     });
+
+    history.push('/movies');
   }
 
   const handleTitleChange = (e) => {

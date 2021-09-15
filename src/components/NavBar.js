@@ -15,7 +15,7 @@ function NavBar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{display: 'flex', justifyContent: 'space-evenly'}}>
-      <h5>Active User: {activeUser && activeUser.name}</h5>
+      {isAuthenticated ? <h5>Active User: {activeUser && activeUser.name}</h5> : <h5>Welcome Guest</h5>}
       <h5 className="nav-link"><Link to="/movies">Movies</Link></h5>
       {isAuthenticated && (
       <h5 className="nav-link"><Link to="/add">Add Movies</Link></h5>

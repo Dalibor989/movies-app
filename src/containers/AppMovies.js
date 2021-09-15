@@ -24,7 +24,7 @@ function AppMovies() {
     dispatch(getMovies());
   }, []);
 
-  function sortBy(criteria) {
+  const sortBy = (criteria) => {
     setSortCriteria(criteria);
 
     if(criteria == sortCriteria) {
