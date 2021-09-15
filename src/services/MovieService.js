@@ -13,6 +13,12 @@ class MovieService extends HttpService {
     return data;
   }
 
+  getMovie = async (id) => {
+    const { data } = await this.apiCall.get(`/movies/${id}`);
+    
+    return data;
+  }
+
   addMovie = async (newMovie) => {
     const { data } = await this.apiCall.post('/movies', newMovie);
       

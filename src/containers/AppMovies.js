@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import MovieRow from '../components/MovieRow';
 import { getMovies, selectMovies } from '../store/movies';
 
@@ -42,7 +43,9 @@ function AppMovies() {
         <h3 onClick={() => {sortBy("director")}}>Director</h3>
         <ul className="list-group">
           {sortedMovies.map((movie) => (
-            <MovieRow key={movie.id} movie={movie} />
+            <Link to={`/movies/${movie.id}`}>
+              <MovieRow key={movie.id} movie={movie} />
+            </Link>
           ))}
         </ul>
       </div>

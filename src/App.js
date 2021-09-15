@@ -10,6 +10,7 @@ import GuestRoute from './components/shared/GuestRoute';
 import PrivateRoute from './components/shared/PrivateRoute';
 import { getActiveUser } from "./store/activeUser";
 import store from './store';
+import SingleMovie from './containers/SingleMovie';
 
 function App() {
   useEffect(() => {
@@ -27,6 +28,9 @@ function App() {
         <Switch>
           <Route exact path="/movies">
             <AppMovies />
+          </Route>
+          <Route exact path="/movies/:id">
+            <SingleMovie />
           </Route>
           <GuestRoute exact path="/register">
             <Register />

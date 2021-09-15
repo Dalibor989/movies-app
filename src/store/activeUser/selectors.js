@@ -3,6 +3,5 @@ export function selectActiveUser(state) {
 }
 
 export function selectIsAuthenticated(state) {
-  console.log('Select token', state);
   return !!state.activeUser.token;
 }
